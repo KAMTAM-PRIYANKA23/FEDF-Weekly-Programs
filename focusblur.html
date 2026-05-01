@@ -1,0 +1,20 @@
+<html>
+<head><title>Focus Blur</title></head>
+<body>
+
+<input type="text" id="name" onfocus="f1()" onblur="f2()">
+<p id="msg"></p>
+
+<script>
+function f1(){
+ document.getElementById("msg").innerHTML="Focused";
+ document.getElementById("name").style.background="red";
+}
+function f2(){
+ document.getElementById("msg").innerHTML="Blurred";
+ document.getElementById("name").style.background="white";
+}
+</script>
+
+</body>
+</html>

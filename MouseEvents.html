@@ -1,0 +1,26 @@
+<html>
+<head><title>Mouse Events</title></head>
+<body>
+
+<div id="box" style="width:200px;height:200px;background:lightblue;text-align:center;line-height:200px;"
+onclick="c1()" ondblclick="c2()" onmouseover="c3()" onmouseout="c4()">
+Click Me
+</div>
+
+<p id="msg"></p>
+
+<script>
+function c1(){ document.getElementById("msg").innerHTML="Clicked"; }
+function c2(){ document.getElementById("msg").innerHTML="Double Clicked"; }
+function c3(){
+ document.getElementById("box").style.background="yellow";
+ document.getElementById("msg").innerHTML="Mouse Over";
+}
+function c4(){
+ document.getElementById("box").style.background="lightblue";
+ document.getElementById("msg").innerHTML="Mouse Out";
+}
+</script>
+
+</body>
+</html>
