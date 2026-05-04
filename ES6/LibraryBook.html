@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library Book Management</title>
+</head>
+<body>
+
+<h2>Library Book Details</h2>
+
+<button onclick="showBooks()">Show Books</button>
+
+<div id="book"></div>
+
+<script>
+  class Book {
+    constructor(title, author, price) {
+      this.title = title;
+      this.author = author;
+      this.price = price;
+    }
+  }
+
+  const finalPrice = (main, ...extra) => {
+    return main + extra.reduce((sum, p) => sum + p, 0);
+  };
+
+  const b1 = new Book("AI Basics", "John", 300);
+  const b2 = new Book("JavaScript", "David", 400);
+
+  const showBooks = () => {
+    let output = "";
+
+    [b1, b2].forEach(({title, author, price}) => {
+      let total = finalPrice(price, 50, 20);
+      output += `<p>Title: ${title}, Author: ${author}, Final Price: ${total}</p>`;
+    });
+
+    document.getElementById("book").innerHTML = output;
+  };
+</script>
+
+</body>
+</html>
